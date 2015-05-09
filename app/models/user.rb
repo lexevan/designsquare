@@ -11,8 +11,12 @@ class User < ActiveRecord::Base
   validates :username, length: {in:3..15, message: 'Username must be between 3-15 characters'}  
 
   has_many :posts
+  has_many :comments
 
   acts_as_voter
+
+  acts_as_taggable_on :skills, :industries, :clients
+
 
   def name
     "#{first_name} #{last_name}"
