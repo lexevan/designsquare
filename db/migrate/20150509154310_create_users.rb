@@ -18,6 +18,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter
       t.string :instagram
 
+      t.boolean :astronaut
+      t.boolean :editor
+
       t.timestamps null: false
     end
 

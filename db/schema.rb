@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(version: 20150509160444) do
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "posts", force: :cascade do |t|
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "post"
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -82,6 +84,8 @@ ActiveRecord::Schema.define(version: 20150509160444) do
     t.string   "linkedin"
     t.string   "twitter"
     t.string   "instagram"
+    t.boolean  "astronaut"
+    t.boolean  "editor"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
