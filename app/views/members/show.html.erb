@@ -1,0 +1,44 @@
+<div class="col-md-6 col-md-offset-3">
+
+<% if current_user == @member %>
+  <%= link_to "<button type='button' class='btn'>Edit Profile</button>".html_safe, edit_member_path(@member) %>
+<% end %>
+
+<h2> <%= @member.name %></h2>
+
+<h5> Username: </h5>
+<h3> <%= @member.username %></h3>
+
+<h5> Current Job Title: </h5>
+<h3> <%= @member.title %></h3>
+
+<h5> Company: </h5>
+<h3> <%= @member.company %></h3>
+
+<h5> Company Website: </h5>
+<h3> <%= @member.website %></h3>
+
+<h5> Location: </h5>
+<h3> <%= @member.location %></h3>
+
+<h5> Excited_about: </h5>
+<h3> <%= @member.excited_about %></h3>
+
+<h5> Experience: </h5>
+<h3> <%= @member.experience %></h3>
+
+<h5> Bio: </h5>
+<h3> <%= @member.bio %></h3>
+
+<h5> Expertise: </h5>
+<h3> <%= @member.expertise %></h3>
+
+<h5> Linkedin: </h5>
+<h3> <%= @member.linkedin %></h3>
+
+<h5> Twitter: </h5>
+<h3> <%= @member.twitter %></h3>
+
+<h5> Instagram: </h5>
+<h3> <%= @member.instagram %></h3>
+</div>

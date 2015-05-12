@@ -58,16 +58,27 @@ ul.dropdown-menu {
 
 .btn {
   color: #fff;
-  background-color: #a7a9ac;
+  background-color: #ff5398;
   border: 0px;
   padding: 4px 10px;
   height: 30px;
   border-radius: 4px;
-  text-transform: lowercase;
 }
 
 .btn:hover, .btn:focus, .btn.focus, .btn:active, .btn.active, .open > .btn.dropdown-toggle {
   color: #fff;
   background-color: #ff3586;
   border: 0px;
+}
+
+.btn-grey {
+  background-color: #babcbe;
+}
+
+.btn-grey:hover, .btn-grey:focus, .btn-grey.focus, .btn-grey:active, .btn-grey.active, .open > .btn-grey.dropdown-toggle {
+  background-color: #a7a9ac;
+}
+
+.form-inline {
+  margin-bottom: 15px;
 }

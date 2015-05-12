@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
 
-  resources :comments
-  resources :posts
+  get 'members/show'
+
+  get 'members/edit'
+
   devise_for :users
-  resources :users
+  devise_scope :user do
+    get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, role: :creative
+    get '/member/sign_up' => 'devise/registrations#new', as: :new_member, role: :member
+  end
+
+  get 'users/:id' => 'users#show', as: :user
+
 
   resources :creatives
   resources :members
+  resources :comments
+  resources :posts
+
   resources :projects
   resources :collections
   resources :messages
