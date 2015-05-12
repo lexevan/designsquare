@@ -1,0 +1,15 @@
+<% if notice || alert %>
+  <div class="container">
+    <% if notice %>
+      <notice class="row">
+        <p class="notice"><%= notice %></p>
+      </notice>
+    <% end %>
+
+    <% if alert %>
+      <alert class="row">
+        <p class="alert"><%= alert %></p>
+      </alert>
+    <% end %>
+  </div>
+<% end %>

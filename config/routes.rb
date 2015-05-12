@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
   resources :comments
   resources :posts
   devise_for :users
@@ -9,8 +7,15 @@ Rails.application.routes.draw do
 
   resources :creatives
   resources :members
+  resources :projects
+  resources :collections
+  resources :messages
+  resources :profiles
+  resources :invites
 
   root 'home#index'
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

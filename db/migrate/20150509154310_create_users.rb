@@ -21,6 +21,8 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :astronaut
       t.boolean :editor
 
+      t.integer :role, default: 0
+
       t.timestamps null: false
     end
 

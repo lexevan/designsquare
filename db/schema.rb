@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150509160444) do
     t.string   "instagram"
     t.boolean  "astronaut"
     t.boolean  "editor"
+    t.integer  "role",                   default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
