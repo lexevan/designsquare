@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+
+.padtop {
+  padding-top: 60px;
+}
+
 .navbar-inverse {
   background-color: #000;
   border-color: #000;
@@ -81,4 +86,26 @@ ul.dropdown-menu {
 
 .form-inline {
   margin-bottom: 15px;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 150px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: #fff;
+}
+
+.jumbotron h1 {
+  font-size: 85px;
+  line-height: 85px;
+}
+
+.jumbotron p {
+  margin: 30px;
+  font-size: 19px;
+  font-weight: 200;
 }
