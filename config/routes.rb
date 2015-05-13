@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, role: :creative
     get '/member/sign_up' => 'devise/registrations#new', as: :new_member, role: :member
-    get '/creative/edit' => 'devise/registrations#edit', as: :edit_creative
-    get '/member/edit' => 'devise/registrations#edit', as: :edit_member
+    #get '/creative/edit' => 'devise/registrations#edit', as: :edit_creative
+    #get '/member/edit' => 'devise/registrations#edit', as: :edit_member
   end
 
   get 'users/:id' => 'users#show', as: :user

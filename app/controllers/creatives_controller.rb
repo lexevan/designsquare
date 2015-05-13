@@ -15,6 +15,8 @@ class CreativesController < ApplicationController
 
   def show
     @creative = User.find(params[:id])
+
+    @posts = @creative.posts
   end
 
   def edit

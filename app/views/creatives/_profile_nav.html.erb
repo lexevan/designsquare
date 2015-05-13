@@ -1,0 +1,26 @@
+<nav class="navbar navbar-profile navbar-static-top">
+  <div class="container">
+    <div class="secondary-nav navbar-header">
+
+      <div class="col-md-3">
+      </div>
+
+      <ul class="nav underscore navbar-nav">
+        <li><%= link_to "Overview", creative_path(@creative) %></li>
+        <li><%= link_to "Portfolio", edit_creative_path(@creative) %></li>
+        <li><%= link_to "Experience", edit_creative_path(@creative) %></li>
+        <li><%= link_to "Favorites", edit_creative_path(@creative) %></li>
+        <li><%= link_to "Followers", edit_creative_path(@creative) %></li>
+        <li><%= link_to "Following", edit_creative_path(@creative) %></li>
+        <li><%= link_to "Collections", edit_creative_path(@creative) %></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user == @creative %>
+          <li><%= link_to "<button type='button' class='btn btn-grey navbar-btn'>Edit Profile</button>".html_safe, edit_creative_path(@creative) %></li>
+        <% end %>
+      </ul>    
+    
+    </div>
+  </div>
+</nav>

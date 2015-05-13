@@ -1,53 +1,19 @@
-<div class="col-md-6 col-md-offset-3">
 
-<% if current_user == @creative %>
-  <%= link_to "<button type='button' class='btn'>Edit Profile</button>".html_safe, edit_creative_path(@creative) %>
-<% end %>
+<%= render 'profile_header' %>
+<%= render 'profile_nav' %>
 
-<h2> <%= @creative.name %></h2>
-
-<h5> Username: </h5>
-<h3> <%= @creative.username %></h3>
-
-<h5> Latest Job Title: </h5>
-<h3> <%= @creative.title %></h3>
-
-<h5> Company: </h5>
-<h3> <%= @creative.company %></h3>
-
-<h5> Website: </h5>
-<h3> <%= @creative.website %></h3>
-
-<h5> Location: </h5>
-<h3> <%= @creative.location %></h3>
-
-<h5> Excited_about: </h5>
-<h3> <%= @creative.excited_about %></h3>
-
-<h5> Experience: </h5>
-<h3> <%= @creative.experience %></h3>
-
-<h5> Bio: </h5>
-<h3> <%= @creative.bio %></h3>
-
-<h5> Expertise: </h5>
-<h3> <%= @creative.expertise %></h3>
-
-<h5> Linkedin: </h5>
-<h3> <%= @creative.linkedin %></h3>
-
-<h5> Twitter: </h5>
-<h3> <%= @creative.twitter %></h3>
-
-<h5> Instagram: </h5>
-<h3> <%= @creative.instagram %></h3>
-
-<h5> Professional Skills: </h5>
-<h3> <%= @creative.skill_list %></h3>
-
-<h5> Noteable Clients: </h5>
-<h3> <%= @creative.client_list %></h3>
-
-<h5> Industry Experience: </h5>
-<h3> <%= @creative.industry_list %></h3>
+<div class="container-fluid profile-main">
+  <div class="container">
+    <div class="col-md-3 ">
+      <%= render 'profile_left' %>
+    </div>
+    <div class="col-md-9">
+      <div class="col-md-8">
+        <%= render 'profile_main' %>
+      </div>
+      <div class="col-md-4">
+        <%= render 'profile_right' %>
+      </div>
+    </div>
+  </div>
 </div>
