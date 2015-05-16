@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
  
     @posts = @user.posts
   end
@@ -35,32 +35,32 @@ class UsersController < ApplicationController
   end
 
   def portfolio
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @projects = @user.projects
   end
 
   def experience
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @experience = @user.experience
   end
 
   def favorites
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @favorites = @user.find_voted_items
   end
 
   def followers
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @followers = @user.followers
   end
 
   def following
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @following = @user.following_users
   end
 
   def collections
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @collections = @user.collections
   end
 

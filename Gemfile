@@ -64,3 +64,4 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "acts_as_follower"
 gem "paperclip", "~> 4.2"
+gem 'friendly_id', '~> 5.1.0'
