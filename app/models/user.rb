@@ -15,7 +15,13 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  acts_as_follower
+  acts_as_followable
+
   acts_as_taggable_on :skills, :industries, :clients
+
+  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>", :icon => "30x30>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
   def name

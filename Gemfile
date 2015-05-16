@@ -63,5 +63,4 @@ gem 'acts_as_commentable'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem "acts_as_follower"
-gem 'bootstrap-sass'
 gem "paperclip", "~> 4.2"

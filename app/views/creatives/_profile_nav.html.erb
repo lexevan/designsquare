@@ -18,6 +18,10 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user == @creative %>
           <li><%= link_to "<button type='button' class='btn btn-grey navbar-btn'>Edit Profile</button>".html_safe, edit_creative_path(@creative) %></li>
+        <% elsif current_user.following?(@creative) %>
+          <li><%= link_to "<button type='button' class='btn btn-primary navbar-btn'>Following</button>".html_safe, unfollow_user_path(@creative) %></li>
+        <% elsif %>
+          <li><%= link_to "<button type='button' class='btn btn-primary navbar-btn'>Follow</button>".html_safe, follow_user_path(@creative) %></li>
         <% end %>
       </ul>    
     

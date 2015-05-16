@@ -6,13 +6,17 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_scope :user do
-    get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, role: :creative
-    get '/member/sign_up' => 'devise/registrations#new', as: :new_member, role: :member
+    get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, user: {role: 'creative'}
+    get '/member/sign_up' => 'devise/registrations#new', as: :new_member, user: {role: 'member'}
     #get '/creative/edit' => 'devise/registrations#edit', as: :edit_creative
     #get '/member/edit' => 'devise/registrations#edit', as: :edit_member
+    #put '/creative/update' => 'devise/registrations#update', as: :update_creative
   end
 
   get 'users/:id' => 'users#show', as: :user
+
+  get 'follow/:id' => 'follows#follow', as: :follow_user
+  get 'unfollow/:id' => 'follows#unfollow', as: :unfollow_user
 
 
   resources :creatives

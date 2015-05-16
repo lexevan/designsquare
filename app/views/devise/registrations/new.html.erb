@@ -4,12 +4,12 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label_html: { class: 'sr-only' }, hint_html: {class: 'h6'}}) do |f| %>
   <%= f.error_notification %>
 
-  <% if params[:role] == :member %>
-  <%= render "member_form", :f => f %>
+  <% if params[:user][:role] == 'member' %>
+    <%= render "member_form", :f => f %>
   <% end %>
 
-  <% if params[:role] == :creative %>
-  <%= render "creative_form", :f => f %>
+  <% if params[:user][:role] == 'creative' %>
+    <%= render "creative_form", :f => f %>
   <% end %>
 
   <div class="form-actions">

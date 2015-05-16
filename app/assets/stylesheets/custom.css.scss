@@ -1,6 +1,3 @@
-@import "bootstrap";
-
-
 .padtop {
   padding-top: 60px;
 }
@@ -13,7 +10,6 @@
 
 .primary-nav.navbar-header {
   height: 50px;
-  width: inherit;
 }
 
 .navbar-brand {
@@ -59,6 +55,10 @@ ul.dropdown-menu {
 .dropdown-menu > li > a:hover {
   color: #666;
   background-color: #e9e9e9;
+}
+
+a.dropdown-toggle.avatar img, .profile-image img {
+  border-radius: 4px;
 }
 
 .btn {
@@ -163,10 +163,7 @@ nav.navbar.navbar-profile.navbar-static-top {
   border-bottom: 1px #ccc solid;
 }
 
-
-
-
-
-
-
+.container.flash {
+  padding-top: 60px;
+}
 

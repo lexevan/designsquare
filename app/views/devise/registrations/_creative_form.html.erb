@@ -7,5 +7,5 @@
     <%= f.input :last_name, placeholder: "Last name", required: true %>
   </div>
   <%= f.input :username, placeholder: "Username", required: true %>
-  <%= f.input :role, as: :hidden, input_html: {value: params[:role]} %>    
+  <%= f.input :role, as: :hidden, input_html: {value: params[:user][:role]} %>    
 </div>
