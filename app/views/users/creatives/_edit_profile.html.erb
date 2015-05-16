@@ -1,17 +1,20 @@
+<%= render 'users/creatives/shared/profile_header' %>
+<%= render 'users/creatives/shared/profile_nav' %>
+
 <div class="col-md-6 col-md-offset-3">
 <h2> Edit Profile </h2>
 
 <h5> Username: </h5>
-<h3> <%= @creative.username %></h3>
+<h3> <%= @user.username %></h3>
 
-<%= simple_form_for @creative, url: creative_path(@creative), method: :patch do |f| %>
+<%= simple_form_for @user, url: user_path(@user), method: :patch do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <h5> Profile Photo </h5>
     <% if current_user.avatar? %>
         <div class="profile-image"> 
-            <%= image_tag @creative.avatar.url(:medium) %>
+            <%= image_tag @user.avatar.url(:medium) %>
         </div>
     <% else %>
         <%= f.input :avatar, as: :file, label: false %></h3>
@@ -61,8 +64,6 @@
 
     <h5> Industry Experience: </h5>
     <h3> <%= f.input :industry_list, label: false %></h3>
-
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
   
   </div>
 

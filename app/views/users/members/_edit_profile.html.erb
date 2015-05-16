@@ -2,9 +2,9 @@
 <h2> Edit Profile </h2>
 
 <h5> Username: </h5>
-<h3> <%= @member.username %></h3>
+<h3> <%= @user.username %></h3>
 
-<%= simple_form_for @member do |f| %>
+<%= simple_form_for @user do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -44,9 +44,6 @@
 
     <h5> Instagram: </h5>
     <h3> <%= f.input :instagram, label: false %></h3>
-
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-
   </div>
 
   <div class="form-actions">

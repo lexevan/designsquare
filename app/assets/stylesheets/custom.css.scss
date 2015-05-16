@@ -124,7 +124,14 @@ main.container-fluid.main-container {
 
 .container-fluid.profile-header {
   height: 300px;
+}
+
+.container-fluid.profile-header.creative {
   background-color: #3fa9f5;
+}
+
+.container-fluid.profile-header.member {
+  background-color: rgb(255, 50, 50);
 }
 
 .secondary-nav.navbar-header {
@@ -165,5 +172,12 @@ nav.navbar.navbar-profile.navbar-static-top {
 
 .container.flash {
   padding-top: 60px;
+}
+
+.mini-profile.well.well-lg {
+  width: 290px;
+  height: 290px;
+  float: left;
+  margin: 0px 5px;
 }
 

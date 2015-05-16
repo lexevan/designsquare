@@ -1,0 +1,10 @@
+<h2>Projects</h2>
+
+<% @projects.each do |project| %>
+  <div class="project well well-lg">
+  <h6><b><%= link_to project.user.name, user_path(project.user.id) %></b> @<%= project.user.username %> • <%= project.created_at.strftime("%b %d") %></h6>
+
+  <p><%= project.name %></p>
+
+  </div> 
+<% end %>

@@ -1,0 +1,10 @@
+<h2>Experience</h2>
+
+<% @experience.each do |experience| %>
+  <div class="experience well well-lg">
+  <h6><b><%= link_to experience.user.name, user_path(experience.user.id) %></b> @<%= experience.user.username %> • <%= experience.created_at.strftime("%b %d") %></h6>
+
+  <p><%= experience.name %></p>
+
+  </div> 
+<% end %>

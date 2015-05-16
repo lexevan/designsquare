@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <div class="post well well-lg">
+  <h6><b><%= link_to post.user.name, user_path(post.user.id) %></b> @<%= post.user.username %> • <%= post.created_at.strftime("%b %d") %></h6>
+
+  <p><%= post.post %></p>
+
+  </div> 
+<% end %>

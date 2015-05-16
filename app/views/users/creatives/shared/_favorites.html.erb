@@ -1,0 +1,11 @@
+<% @favorites.each do |favorite| %>
+  <div class="mini-profile well well-lg">
+  <div class="mini-profile photo"><%= image_tag favorite.avatar.url(:thumb) %></div>
+  <h4><b><%= link_to favorite.name, user_path(favorite.id) %></b></h4>
+  <h5><b>@<%= link_to favorite.username, user_path(favorite.id) %></b></h5>
+
+  <p><%= favorite.bio %></p>
+
+
+  </div> 
+<% end %>

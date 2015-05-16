@@ -1,0 +1,10 @@
+<% @following.each do |following| %>
+  <div class="mini-profile well well-lg">
+  <div class="mini-profile photo"><%= image_tag following.avatar.url(:thumb) %></div>
+  <h4><b><%= link_to following.name, user_path(following.id) %></b></h4>
+  <h5><b>@<%= link_to following.username, user_path(following.id) %></b></h5>
+
+  <p><%= following.bio %></p>
+
+  </div> 
+<% end %>

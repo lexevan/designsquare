@@ -1,37 +1,38 @@
 Rails.application.routes.draw do
 
-  get 'members/show'
-
-  get 'members/edit'
+  root 'home#index'
 
   devise_for :users
   devise_scope :user do
     get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, user: {role: 'creative'}
     get '/member/sign_up' => 'devise/registrations#new', as: :new_member, user: {role: 'member'}
-    #get '/creative/edit' => 'devise/registrations#edit', as: :edit_creative
-    #get '/member/edit' => 'devise/registrations#edit', as: :edit_member
-    #put '/creative/update' => 'devise/registrations#update', as: :update_creative
+    get '/:id' => 'users#show', as: :user
+    get '/:id/edit/profile' => 'users#edit_profile', as: :edit_user_profile
+    get '/:id/edit/profile/remove_avatar' => 'users#remove_avatar', as: :remove_user_avatar
+
+    get '/:id/portfolio' => 'users#portfolio', as: :user_portfolio
+    get '/:id/experience' => 'users#experience', as: :user_experience
+    get '/:id/favorites' => 'users#favorites', as: :user_favorites
+    get '/:id/followers' => 'users#followers', as: :user_followers
+    get '/:id/following' => 'users#following', as: :user_following
+    get '/:id/collections' => 'users#collections', as: :user_collections
+
+    get '/creatives' => 'users#creatives_index', as: :creatives_index
+    get '/members' => 'users#members_index', as: :members_index
   end
 
-  get 'users/:id' => 'users#show', as: :user
+  
 
   get 'follow/:id' => 'follows#follow', as: :follow_user
   get 'unfollow/:id' => 'follows#unfollow', as: :unfollow_user
 
-
-  resources :creatives
-  resources :members
-  resources :comments
   resources :posts
-
   resources :projects
   resources :collections
   resources :messages
-  resources :profiles
   resources :invites
 
-  root 'home#index'
-
+  resources :comments
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

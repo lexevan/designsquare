@@ -1,0 +1,5 @@
+<% if @user.creative? %>
+  <%= render 'users/creatives/edit_profile' %>
+<% else %>
+  <%= render 'users/members/edit_profile' %>
+<% end %>

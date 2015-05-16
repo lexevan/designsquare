@@ -1,0 +1,5 @@
+<% if @user.creative? %>
+  <%= render 'users/creatives/collections' %>
+<% else %>
+  <%= render 'users/members/collections' %>
+<% end %>

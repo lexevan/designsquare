@@ -1,0 +1,10 @@
+<h2>Collections</h2>
+
+<% @collections.each do |collection| %>
+  <div class="collection well well-lg">
+  <h6><b><%= link_to collection.user.name, user_path(collection.user.id) %></b> @<%= collection.user.username %> • <%= collection.created_at.strftime("%b %d") %></h6>
+
+  <p><%= colleciton.name %></p>
+
+  </div> 
+<% end %>
