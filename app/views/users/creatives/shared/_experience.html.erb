@@ -1,10 +1,19 @@
 <h2>Experience</h2>
 
-<% @experience.each do |experience| %>
-  <div class="experience well well-lg">
-  <h6><b><%= link_to experience.user.name, user_path(experience.user.id) %></b> @<%= experience.user.username %> • <%= experience.created_at.strftime("%b %d") %></h6>
+<% @positions.each do |position| %>
+  <div class="position well well-lg">
+  <p><%= position.company_name %></p>
+  <p><%= position.title %></p>
+  <p><%= position.start_date.strftime("%b %y") %> to <%= position.end_date.strftime("%b %y") %></p>
+  </div> 
+<% end %>
 
-  <p><%= experience.name %></p>
+<h2>Education</h2>
 
+<% @educations.each do |education| %>
+  <div class="education well well-lg">
+  <p><%= education.school %></p>
+  <p><%= education.degree %></p>
+  <p><%= education.start_year %> to <%= education.end_year %></p>
   </div> 
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517135615) do
+ActiveRecord::Schema.define(version: 20150517145208) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(version: 20150517135615) do
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "educations", force: :cascade do |t|
+    t.string   "school"
+    t.integer  "start_year"
+    t.integer  "end_year"
+    t.string   "degree"
+    t.string   "field_of_study"
+    t.text     "description"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "follows", force: :cascade do |t|
     t.integer  "followable_id",                   null: false
@@ -57,7 +72,6 @@ ActiveRecord::Schema.define(version: 20150517135615) do
   create_table "positions", force: :cascade do |t|
     t.string   "company_name"
     t.string   "title"
-    t.string   "locaiton"
     t.text     "description"
     t.date     "start_date"
     t.date     "end_date"

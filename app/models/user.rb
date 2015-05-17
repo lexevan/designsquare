@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :positions
+  has_many :educations  
 
   has_and_belongs_to_many :projects
 

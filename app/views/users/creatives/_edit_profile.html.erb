@@ -30,70 +30,84 @@
     </div>
 
     <div class="col-md-6">
-      <div class="form-inputs">
-        <h5> Profile Photo </h5>
-        <% if current_user.avatar? %>
-            <div class="profile-image"> 
-                <%= image_tag @user.avatar.url(:medium) %>
+      <div class="form" id="overview">
+
+        <div class="form-inputs">
+          <h5> Profile Photo </h5>
+          <% if current_user.avatar? %>
+              <div class="profile-image"> 
+                  <%= image_tag @user.avatar.url(:medium) %>
+              </div>
+              <%= f.input :avatar, as: :file %>
+          <% else %>
+              <%= f.input :avatar, as: :file %>
+          <% end %>
+
+          <h5> Latest Job Title: </h5>
+          <h3> <%= f.input :title %> </h3>
+
+          <h5> Company: </h5>
+          <h3> <%= f.input :company %></h3>
+
+          <h5> Website: </h5>
+          <div class="form-inline">
+           <div class="input-group">
+              <div class="input-group-addon">http://</div>
+              <h3> <%= f.input :website %></h3>
             </div>
-            <%= f.input :avatar, as: :file %>
-        <% else %>
-            <%= f.input :avatar, as: :file %>
-        <% end %>
-
-        <h5> Latest Job Title: </h5>
-        <h3> <%= f.input :title %> </h3>
-
-        <h5> Company: </h5>
-        <h3> <%= f.input :company %></h3>
-
-        <h5> Website: </h5>
-        <div class="form-inline">
-         <div class="input-group">
-            <div class="input-group-addon">http://</div>
-            <h3> <%= f.input :website %></h3>
-          </div>
           </div>
 
-        <h5> Location: </h5>
-        <h3> <%= f.input :location %></h3>
+          <h5> Location: </h5>
+          <h3> <%= f.input :location %></h3>
 
-        <h5> Excited_about: </h5>
-        <h3> <%= f.input :excited_about %></h3>
+          <h5> Excited_about: </h5>
+          <h3> <%= f.input :excited_about %></h3>
 
-        <h5> When did you begin your career?: </h5>
-        <div class="form-inline">
-            <h3> <%= f.input :experience, as: :date, start_year: Date.today.year - 1,
-                                  end_year: Date.today.year - 90, discard_day: true,
-                                  order: [:month, :year] %></h3>
+          <h5> When did you begin your career?: </h5>
+          <div class="form-inline">
+              <h3> <%= f.input :experience, as: :date, start_year: Date.today.year - 1,
+                                    end_year: Date.today.year - 90, discard_day: true,
+                                    order: [:month, :year] %></h3>
+          </div>
+
+          <h5> Bio: </h5>
+          <h3> <%= f.input :bio %></h3>
+
+          <h5> Expertise: </h5>
+          <h3> <%= f.input :expertise %></h3>
+
+          <h5> Linkedin: </h5>
+          <h3> <%= f.input :linkedin %></h3>
+
+          <h5> Twitter: </h5>
+          <h3> <%= f.input :twitter %></h3>
+
+          <h5> Instagram: </h5>
+          <h3> <%= f.input :instagram %></h3>
+
+          <h5> Professional Skills: </h5>
+          <h3> <%= f.input :skill_list %></h3>
+
+          <h5> Noteable Clients: </h5>
+          <h3> <%= f.input :client_list %></h3>
+
+          <h5> Industry Experience: </h5>
+          <h3> <%= f.input :industry_list %></h3>
+        
         </div>
 
-        <h5> Bio: </h5>
-        <h3> <%= f.input :bio %></h3>
+        <div class="form" id="experience">
+          <div class="work history">
+            <%= render 'users/creatives/shared/experience' %>
+          </div>
+            <%= link_to "<button type='button' class='btn btn-grey navbar-btn'>add position</button>".html_safe, new_position_path %>
+            <%= link_to "<button type='button' class='btn btn-grey navbar-btn'>add education</button>".html_safe, new_education_path %>
+        </div>
 
-        <h5> Expertise: </h5>
-        <h3> <%= f.input :expertise %></h3>
 
-        <h5> Linkedin: </h5>
-        <h3> <%= f.input :linkedin %></h3>
-
-        <h5> Twitter: </h5>
-        <h3> <%= f.input :twitter %></h3>
-
-        <h5> Instagram: </h5>
-        <h3> <%= f.input :instagram %></h3>
-
-        <h5> Professional Skills: </h5>
-        <h3> <%= f.input :skill_list %></h3>
-
-        <h5> Noteable Clients: </h5>
-        <h3> <%= f.input :client_list %></h3>
-
-        <h5> Industry Experience: </h5>
-        <h3> <%= f.input :industry_list %></h3>
-      
       </div>
     </div>
+  
 
     <div class="col-md-3">
       <div class="profile account info">

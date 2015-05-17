@@ -21,10 +21,14 @@ class UsersController < ApplicationController
 
   def edit_profile
     @user = current_user
+    @positions = @user.positions
+    @educations = @user.educations
   end
 
   def update_profile
     @user = current_user
+    @positions = @user.positions
+    @educations = @user.educations
 
     if @user.update(user_params)
       alert = { success: "Your profile has been updated.", error: "Something went wrong, please check the fields below and try again." }
@@ -42,7 +46,7 @@ class UsersController < ApplicationController
   def experience
     @user = User.friendly.find(params[:id])
     @positions = @user.positions
-    @education = @user.education
+    @educations = @user.educations
   end
 
   def favorites

@@ -6,7 +6,7 @@ class PositionsController < ApplicationController
   end
 
   def create
-    @position = Position.create(Position_params)
+    @position = Position.create(position_params)
 
     if @position.save
       redirect_to user_experience_path(@position.user)
@@ -32,7 +32,7 @@ class PositionsController < ApplicationController
   private 
 
   def position_params
-    params.require(:position).permit( :company_name, :title, :locaiton, :description, :start_date, :end_date, :user_id)
+    params.require(:position).permit( :company_name, :title, :location, :description, :start_date, :end_date, :user_id)
   end
 
 end

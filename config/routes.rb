@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :projects
+  resources :positions
+  resources :educations
   resources :collections
   resources :messages
   resources :invites
