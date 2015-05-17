@@ -2,7 +2,9 @@
 
 <% @projects.each do |project| %>
   <div class="project well well-lg">
-  <h6><b><%= link_to project.user.name, user_path(project.user.id) %></b> @<%= project.user.username %> • <%= project.created_at.strftime("%b %d") %></h6>
+    <% project.users.each do |user| %>
+      <h6><b><%= link_to user.name, user_path(user.id) %></b> @<%= user.username %> • <%= project.created_at.strftime("%b %d") %></h6>
+     <% end %>
 
   <p><%= project.name %></p>
 
