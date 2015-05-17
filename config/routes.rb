@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   resources :educations
   resources :collections
   resources :messages
-  resources :invites
 
   resources :comments
   
