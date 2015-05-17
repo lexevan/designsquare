@@ -1,0 +1,18 @@
+<div class="col-md-4 col-md-offset-4">
+<h2>Claim invite</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), defaults: {label_html: { class: 'sr-only' }, hint_html: {class: 'h6'}}) do |f| %>
+  <%= f.error_notification %>
+  <%= render "devise/registrations/creative_form", f: f, params: {user: {role: :creative}} %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+    <%= link_to "<button type='button' class='btn btn-grey'>Cancel</button>".html_safe, cancel_user_registration_path %>
+  </div>
+<% end %>
+
+  <div class="links">
+    <h5> Already signed up? </h5>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

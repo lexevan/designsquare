@@ -67,3 +67,4 @@ gem "paperclip", "~> 4.2"
 gem 'friendly_id', '~> 5.1.0'
 gem 'geocoder'
 gem 'kaminari'
+gem 'devise_invitable', '~> 1.3.4'

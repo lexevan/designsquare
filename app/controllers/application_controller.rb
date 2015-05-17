@@ -15,5 +15,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :current_password, :password, :password_confirmation, :username, :first_name, :last_name, :role,
       :title, :company,:expertise, :experience, :website, :location, :excited_about, :bio, :linkedin, :twitter, :instagram,
       :skill_list, :industry_list, :client_list)}
+    devise_parameter_sanitizer.for(:accept_invitation) { |u| u.permit(:email, :invitation_token, :password, :password_confirmation, :username, :remember_me, :first_name, :last_name, :role,
+      :title, :company,:expertise, :experience, :website, :location, :excited_about, :bio, :linkedin, :twitter, :instagram,
+      :skill_list, :industry_list, :client_list)}
   end
 end
