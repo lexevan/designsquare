@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
-      flash = { success: "Your profile has been updated.", error: "Something went wrong, please check the fields below and try again." }
+      alert = { success: "Your profile has been updated.", error: "Something went wrong, please check the fields below and try again." }
       redirect_to @user
     else
       render :edit
@@ -41,7 +41,8 @@ class UsersController < ApplicationController
 
   def experience
     @user = User.friendly.find(params[:id])
-    @experience = @user.experience
+    @positions = @user.positions
+    @education = @user.education
   end
 
   def favorites

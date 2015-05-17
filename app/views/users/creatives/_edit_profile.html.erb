@@ -1,75 +1,113 @@
-<%= render 'users/creatives/shared/profile_header' %>
-<%= render 'users/creatives/shared/profile_nav' %>
+<%= simple_form_for @user, url: update_user_profile_path(@user), method: :patch, defaults: {label_html: { class: 'sr-only' }, hint_html: {class: 'h6'}} do |f| %>
 
-<div class="col-md-6 col-md-offset-3">
-<h2> Edit Profile </h2>
+<nav class="navbar navbar-profile edit-profile-nav navbar-fixed-top">
+  <div class="container">
 
-<h5> Username: </h5>
-<h3> <%= @user.username %></h3>
+    <ul class="nav navbar-nav navbar-center">
+        <li><%= link_to "<button type='button' class='btn btn-grey navbar-btn'>Cancel</button>".html_safe, user_path(current_user) %></li>
+        <li><div class="form-actions"><%= f.button :submit, "Save Changes", class: "btn" %></div></li>
+    </ul>
 
-<%= simple_form_for @user, url: user_path(@user), method: :patch do |f| %>
+  </div>
+</nav>
+
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <h5> Profile Photo </h5>
-    <% if current_user.avatar? %>
-        <div class="profile-image"> 
-            <%= image_tag @user.avatar.url(:medium) %>
+<div class="container-fluid profile-main edit">
+  <div class="container">
+
+    <div class="col-md-3">
+
+        <div class="nav form-nav">
+            <ul class="nav nav-stacked ">
+              <li role="overview"><a href="#overview">Overview</a></li>
+              <li role="experience"><a href="#experience">Experience</a></li>
+              <li role="education"><a href="#education">Education</a></li>
+              <li role="social"><a href="#social">Social</a></li>
+            </ul>
         </div>
-    <% else %>
-        <%= f.input :avatar, as: :file, label: false %></h3>
-    <% end %>
 
-    <h5> Latest Job Title: </h5>
-    <h3> <%= f.input :title, label: false %> </h3>
+    </div>
 
-    <h5> Company: </h5>
-    <h3> <%= f.input :company, label: false %></h3>
+    <div class="col-md-6">
+      <div class="form-inputs">
+        <h5> Profile Photo </h5>
+        <% if current_user.avatar? %>
+            <div class="profile-image"> 
+                <%= image_tag @user.avatar.url(:medium) %>
+            </div>
+            <%= f.input :avatar, as: :file %>
+        <% else %>
+            <%= f.input :avatar, as: :file %>
+        <% end %>
 
-    <h5> Website: </h5>
-      <div class="input-group">
-        <div class="input-group-addon">http://</div>
-        <h3> <%= f.input :website, label: false %></h3>
+        <h5> Latest Job Title: </h5>
+        <h3> <%= f.input :title %> </h3>
+
+        <h5> Company: </h5>
+        <h3> <%= f.input :company %></h3>
+
+        <h5> Website: </h5>
+        <div class="form-inline">
+         <div class="input-group">
+            <div class="input-group-addon">http://</div>
+            <h3> <%= f.input :website %></h3>
+          </div>
+          </div>
+
+        <h5> Location: </h5>
+        <h3> <%= f.input :location %></h3>
+
+        <h5> Excited_about: </h5>
+        <h3> <%= f.input :excited_about %></h3>
+
+        <h5> When did you begin your career?: </h5>
+        <div class="form-inline">
+            <h3> <%= f.input :experience, as: :date, start_year: Date.today.year - 1,
+                                  end_year: Date.today.year - 90, discard_day: true,
+                                  order: [:month, :year] %></h3>
+        </div>
+
+        <h5> Bio: </h5>
+        <h3> <%= f.input :bio %></h3>
+
+        <h5> Expertise: </h5>
+        <h3> <%= f.input :expertise %></h3>
+
+        <h5> Linkedin: </h5>
+        <h3> <%= f.input :linkedin %></h3>
+
+        <h5> Twitter: </h5>
+        <h3> <%= f.input :twitter %></h3>
+
+        <h5> Instagram: </h5>
+        <h3> <%= f.input :instagram %></h3>
+
+        <h5> Professional Skills: </h5>
+        <h3> <%= f.input :skill_list %></h3>
+
+        <h5> Noteable Clients: </h5>
+        <h3> <%= f.input :client_list %></h3>
+
+        <h5> Industry Experience: </h5>
+        <h3> <%= f.input :industry_list %></h3>
+      
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="profile account info">
+        <h2> <%= @user.name %></h2>
+        <h4> <%= @user.username %></h4>
       </div>
 
-    <h5> Location: </h5>
-    <h3> <%= f.input :location, label: false %></h3>
+      <div class="section">
+      <p> Need to modify account settings? </p>
+      <%= link_to "<button type='button' class='btn btn-grey navbar-btn'>Account Settings</button>".html_safe, edit_user_registration_path %>
 
-    <h5> Excited_about: </h5>
-    <h3> <%= f.input :excited_about, label: false %></h3>
-
-    <h5> Experience: </h5>
-    <h3> <%= f.input :experience, label: false %></h3>
-
-    <h5> Bio: </h5>
-    <h3> <%= f.input :bio, label: false %></h3>
-
-    <h5> Expertise: </h5>
-    <h3> <%= f.input :expertise, label: false %></h3>
-
-    <h5> Linkedin: </h5>
-    <h3> <%= f.input :linkedin, label: false %></h3>
-
-    <h5> Twitter: </h5>
-    <h3> <%= f.input :twitter, label: false %></h3>
-
-    <h5> Instagram: </h5>
-    <h3> <%= f.input :instagram, label: false %></h3>
-
-    <h5> Professional Skills: </h5>
-    <h3> <%= f.input :skill_list, label: false %></h3>
-
-    <h5> Noteable Clients: </h5>
-    <h3> <%= f.input :client_list, label: false %></h3>
-
-    <h5> Industry Experience: </h5>
-    <h3> <%= f.input :industry_list, label: false %></h3>
-  
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update Profile", class: "btn" %>
-  </div>
-<% end %>
+      </div>
+    </div>
 
 </div>
+</div>
+<% end %>

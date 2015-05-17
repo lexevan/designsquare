@@ -43,7 +43,7 @@ ul.nav.navbar-nav.navbar-right {
 }
 
 ul.dropdown-menu {
-  background-color: #f6f6f6;
+  background-color: #fff;
   text-transform: lowercase;
   border-radius: 4px !important;
 }
@@ -53,8 +53,8 @@ ul.dropdown-menu {
 }
 
 .dropdown-menu > li > a:hover {
-  color: #666;
-  background-color: #e9e9e9;
+  color: #fff;
+  background-color: #FF3586;
 }
 
 a.dropdown-toggle.avatar img, .profile-image img {
@@ -122,6 +122,10 @@ main.container-fluid.main-container {
   padding: 50px 0px 0px;
 }
 
+.container-fluid.profile-main.edit {
+  padding-top: 50px;
+}
+
 .container-fluid.profile-header {
   height: 300px;
 }
@@ -170,6 +174,13 @@ nav.navbar.navbar-profile.navbar-static-top {
   border-bottom: 1px #ccc solid;
 }
 
+nav.navbar.navbar-profile.edit-profile-nav.navbar-fixed-top {
+  margin-top: 50px;
+  border-bottom: 1px #ccc solid;
+  background-color: #fff;
+  z-index: 1;
+}
+
 .container.flash {
   padding-top: 60px;
 }
@@ -181,3 +192,64 @@ nav.navbar.navbar-profile.navbar-static-top {
   margin: 0px 5px;
 }
 
+.nav.form-nav {
+  background: #fafafa;
+  border-radius: 4px;
+  float: left;
+  font-size: 15px;
+  line-height: 15px;
+  overflow: hidden;
+  position: fixed;
+  margin-top: 20px;
+  text-transform: lowercase;
+}
+
+.form-nav li a {
+  border-left: 2px solid transparent;
+  color: #666;
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  overflow: hidden;
+  padding: 0px 50px 0px 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-nav li a:hover {
+  background: #f6f6f6;
+  text-decoration: none;
+}
+
+.form-nav li a.active {
+  border-left: 2px solid #000;
+  color: #1769ff;
+  font-weight: bold;
+}
+
+.input-group {
+  z-index: 0;
+}
+
+nav ul > li > .form-actions {
+  padding-top: 10px;
+}
+
+
+.navbar-nav.navbar-center {
+  width: 100%;
+  text-align: center;
+  > li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+.container.profile-header {
+  padding: 20px 0px;
+}
+
+.profile-image > img {
+  border: 2px solid #fff;
+  border-radius: 4px;
+}

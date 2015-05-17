@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     get '/creative/sign_up' => 'devise/registrations#new', as: :new_creative, user: {role: 'creative'}
     get '/member/sign_up' => 'devise/registrations#new', as: :new_member, user: {role: 'member'}
     get '/:id' => 'users#show', as: :user
-    get '/:id/edit/profile' => 'users#edit_profile', as: :edit_user_profile
-    get '/:id/edit/profile/remove_avatar' => 'users#remove_avatar', as: :remove_user_avatar
+    get '/:id/profile/edit' => 'users#edit_profile', as: :edit_user_profile
+    patch '/:id/profile/update' => 'users#update_profile', as: :update_user_profile
+    get '/:id/edit/remove_avatar' => 'users#remove_avatar', as: :remove_user_avatar
 
     get '/:id/portfolio' => 'users#portfolio', as: :user_portfolio
     get '/:id/experience' => 'users#experience', as: :user_experience

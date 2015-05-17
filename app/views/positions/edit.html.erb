@@ -1,0 +1,23 @@
+<div class="col-md-6 col-md-offset-3">
+<h2>Edit Position</h2>
+
+<%= simple_form_for @position do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :company_name, required: true %>
+    <%= f.input :title, required: true %>
+    <%= f.input :locaiton %>
+    <%= f.input :description %>
+    <%= f.input :start_date, required: true %>
+    <%= f.input :end_date, required: true %>
+    
+    <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Update position", class: "btn" %>
+  </div>
+<% end %>
+
+</div>

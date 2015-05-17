@@ -18,8 +18,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter
       t.string :instagram
 
-      t.boolean :astronaut
-      t.boolean :editor
+      t.boolean :astronaut, default: false
+      t.boolean :editor, default: false
 
       t.integer :role, default: 0
 

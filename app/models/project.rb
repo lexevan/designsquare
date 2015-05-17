@@ -4,4 +4,6 @@ class Project < ActiveRecord::Base
 
   acts_as_votable
 
+  geocoded_by :location
+  after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
 end

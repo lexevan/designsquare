@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516205033) do
+ActiveRecord::Schema.define(version: 20150517135615) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -54,18 +54,39 @@ ActiveRecord::Schema.define(version: 20150516205033) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "positions", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "title"
+    t.string   "locaiton"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "location"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text     "post"
     t.integer  "user_id"
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "location"
   end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "location"
   end
 
   create_table "projects_users", force: :cascade do |t|
@@ -132,6 +153,8 @@ ActiveRecord::Schema.define(version: 20150516205033) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "slug"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
